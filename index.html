@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fictional Chocolate Brand</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, p {
+      margin: 0;
+      padding: 0;
+	  font-size: 15px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F4F4F4;
+    }
+
+    header {
+      background-color: #FCECDD;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #9C5E31;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: #9C5E31;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .product {
+      display: flex;
+      margin-bottom: 30px;
+      border: 1px solid #E8E8E8;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #FFF;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .product img {
+      width: 700px;
+      height: 500px;
+      margin-right: 20px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h2 {
+      color: #9C5E31;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .product-info p {
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .product-info p.price {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .buy-button {
+      display: inline-block;
+      background-color: #9C5E31;
+      color: #FFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .shopping-basket {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #9C5E31;
+      color: #FFF;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 23px;
+    }
+
+    .basket-icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .basket-count {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gomas Inc.</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product1.html">Product 1</a>
+      <a href="product2.html">Product 2</a>
+      <a href="product3.html">Product 3</a>
+      <div class="shopping-basket">
+        <img class="basket-icon" src="file:///C:/Users/GomWa283/Downloads/i01_oip%20(1).png" alt="">
+        <span class="basket-count">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <div class="product">
+    <img src="https://th.bing.com/th/id/OIP.yNY-Vvc5Y0IY5ICc-wF7kAHaE8?pid=ImgDet&rs=1" alt="">
+    <div class="product-info">
+      <h2>Milk Chocolate</h2>
+      <p>Milk chocolate, a delectable confection crafted from cocoa, sugar, and milk, presents a luscious and indulgent delight that captivates the taste buds of chocolate enthusiasts across generations. With its velvety texture and delightful sweetness, it offers a truly satisfying and comforting experience that never fails to please.</p>
+      <p class="price">Price: 2.50€</p>
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" class="quantity-input" min="1" value="1">
+      <button class="buy-button">Buy</button>
+    </div>
+  </div>
+
+  <script>
+    var basketCount = 0;
+    var basketElement = document.querySelector('.basket-count');
+
+    function addToBasket() {
+      var quantityInput = document.getElementById('quantity');
+      var quantity = parseInt(quantityInput.value);
+
+      basketCount += quantity;
+      basketElement.textContent = basketCount;
+    }
+
+    var buyButton = document.querySelector('.buy-button');
+    buyButton.addEventListener('click', addToBasket);
+  </script>
+</body>
+</html>
